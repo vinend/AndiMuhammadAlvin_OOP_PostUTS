@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +9,7 @@ public class Player : MonoBehaviour
    // Variabel untuk menyimpan komponen PlayerMovement dan juga Animator, untuk animation mesin kita di spaceship
     private PlayerMovement playerMovement;
     private Animator animator;
+    public Weapon currentWeapon; // Make this field public
 
     // Fungsi untuk menginisialisasikan objek Player
     private void Awake()
@@ -56,5 +59,23 @@ public class Player : MonoBehaviour
             animator.SetBool("IsMoving", playerMovement.IsMoving());
         }
     }
-}
 
+    public void PickUpWeapon(Weapon newWeapon)
+    {
+        if (currentWeapon != null)
+        {
+            // Detach the current weapon
+            currentWeapon.transform.SetParent(null);
+            currentWeapon.gameObject.SetActive(false); // Optionally deactivate the old weapon
+        }
+
+        // Attach the new weapon
+        currentWeapon = newWeapon;
+        currentWeapon.transform.SetParent(transform);
+        currentWeapon.transform.localPosition = Vector3.zero; // Reset position
+        currentWeapon.transform.localRotation = Quaternion.identity; // Reset rotation
+        currentWeapon.transform.localScale = Vector3.one; // Reset scale
+        currentWeapon.gameObject.SetActive(true); // Ensure the weapon is active
+        Debug.Log("Weapon picked up: " + newWeapon.name); // Log the weapon pickup
+    }
+}

@@ -46,10 +46,9 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        Debug.Log("Velocity: " + rb.velocity);
     }
 
-    // Friction untuk mendapatkan gaya gesekan yang diperlukan, untuk menggerakkan spaceship
+    // Friction untuk mendapatkan gaya gesekan yang diperlukan
     private Vector2 GetFriction()
     {
         float frictionScale = moveDirection != Vector2.zero ? moveFriction.magnitude : stopFriction.magnitude;
