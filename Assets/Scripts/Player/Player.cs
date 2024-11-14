@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -64,18 +64,17 @@ public class Player : MonoBehaviour
     {
         if (currentWeapon != null)
         {
-            // Detach the current weapon
+            currentWeapon.OnUnequip(); // Disable shooting from old weapon
             currentWeapon.transform.SetParent(null);
-            currentWeapon.gameObject.SetActive(false); // Optionally deactivate the old weapon
+            currentWeapon.gameObject.SetActive(false);
         }
 
-        // Attach the new weapon
         currentWeapon = newWeapon;
         currentWeapon.transform.SetParent(transform);
-        currentWeapon.transform.localPosition = Vector3.zero; // Reset position
-        currentWeapon.transform.localRotation = Quaternion.identity; // Reset rotation
-        currentWeapon.transform.localScale = Vector3.one; // Reset scale
-        currentWeapon.gameObject.SetActive(true); // Ensure the weapon is active
-        Debug.Log("Weapon picked up: " + newWeapon.name); // Log the weapon pickup
+        currentWeapon.transform.localPosition = Vector3.zero;
+        currentWeapon.transform.localRotation = Quaternion.identity;
+        currentWeapon.transform.localScale = Vector3.one;
+        currentWeapon.gameObject.SetActive(true);
+        currentWeapon.OnEquip(); // Enable shooting from new weapon
     }
 }
