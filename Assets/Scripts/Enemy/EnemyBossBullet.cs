@@ -59,3 +59,6 @@ public class EnemyBossBullet : MonoBehaviour
         }
     }
 }
+
+
+// untuk salah nama commit wkwkwkkw

@@ -55,3 +55,5 @@ public class CombatManager : MonoBehaviour
         }
     }
 }
+
+// untuk salah nama commit wkwkwkkw
