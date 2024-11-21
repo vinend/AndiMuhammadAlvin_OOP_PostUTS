@@ -77,4 +77,6 @@ public class Player : MonoBehaviour
         currentWeapon.gameObject.SetActive(true);
         currentWeapon.OnEquip(); // Enable shooting from new weapon
     }
+
+    // untuk salah nama commit wkwkwkkw
 }
