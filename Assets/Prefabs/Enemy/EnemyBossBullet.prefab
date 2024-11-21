@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8988836624918612930}
   - component: {fileID: 5775598154029320830}
   - component: {fileID: -4143696617037049867}
+  - component: {fileID: 5882166956338082016}
   m_Layer: 0
   m_Name: EnemyBossBullet
   m_TagString: Bullet
@@ -193,4 +194,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f3da51b83479c4a982dc6175cd427a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  bulletSpeed: 20
+  damage: 10
+--- !u!114 &5882166956338082016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547136794971297887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd570f486cdef674789fa69e83ba8b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  damage: 10

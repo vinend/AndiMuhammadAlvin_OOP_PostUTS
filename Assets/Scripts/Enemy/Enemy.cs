@@ -28,10 +28,15 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    protected virtual void OnDestroy()
+    {
+        // Base implementation - can be empty
+    }
+
     private void Start()
     {
         // Ensure the object is affected by physics but not by gravity
         Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
         rb.gravityScale = 0;
     }
-}
+}   

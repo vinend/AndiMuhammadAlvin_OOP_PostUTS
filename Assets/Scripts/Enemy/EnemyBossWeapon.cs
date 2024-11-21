@@ -6,7 +6,7 @@ public class EnemyBossWeapon : MonoBehaviour
     [Header("Weapon Settings")]
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
-    public float shootIntervalInSeconds = 1f;
+    public float shootIntervalInSeconds = 0.1f;
 
     private IObjectPool<EnemyBossBullet> objectPool;
     private readonly bool collectionCheck = false;

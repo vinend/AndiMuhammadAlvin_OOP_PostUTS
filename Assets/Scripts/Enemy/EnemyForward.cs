@@ -7,7 +7,7 @@ public class EnemyForward : Enemy
 
     public override void Initialize(int enemyLevel, int health)
     {
-        base.Initialize(enemyLevel, health);
+        base.Initialize(enemyLevel, health  );
         SetSpawnPosition();
     }
 

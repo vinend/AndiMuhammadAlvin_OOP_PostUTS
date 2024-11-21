@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
-  damage: 10
+  damage: 20
 --- !u!114 &-2676047879891894308
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,11 +19,6 @@ public class AttackComponent : MonoBehaviour
         if (hitbox != null)
         {   
 
-            InvincibilityComponent invincibility = other.GetComponent<InvincibilityComponent>();
-            if (invincibility != null)
-            {
-                invincibility.StartInvincibility();
-            }
             // If the bullet is not null, use it to damage the target, otherwise use direct damage
             if (bullet != null)
             {
@@ -42,6 +37,14 @@ public class AttackComponent : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                 }
+
+            InvincibilityComponent invincibility = other.GetComponent<InvincibilityComponent>();
+            if (invincibility != null)
+            {
+                invincibility.StartInvincibility();
+            }
+
+
         }
         else
         {

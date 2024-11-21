@@ -170,15 +170,21 @@ MonoBehaviour:
   enemyForwardPrefab: {fileID: 2445563331921171577, guid: f896997b9cc0cea4aaaba01647764ddf, type: 3}
   enemyTargetingPrefab: {fileID: 557949074199861018, guid: f883db7bbb93b664381df94166af328f, type: 3}
   enemyBossPrefab: {fileID: 165994447086403073, guid: d8cb47ab1fb7a2b40ba70445c6fce737, type: 3}
-  enemyLevel: 1
-  enemyHealth: 100
-  rows: 5
-  columns: 5
-  horizontalSpacing: 2
-  verticalSpacing: 0.5
   spawnInterval: 0.4
-  maxEnemies: 20
-  respawnThreshold: 5
+  maxEnemies: 7
+  respawnThreshold: 2
+  spawnedEnemy: {fileID: 0}
+  minimumKillsToIncreaseSpawnCount: 10
+  totalKill: 0
+  totalKillWave: 0
+  spawnCount: 0
+  defaultSpawnCount: 1
+  spawnCountMultiplier: 1
+  multiplierIncreaseCount: 1
+  requiredKillsForBoss: 10
+  bossSpawnDelay: 2
+  combatManager: {fileID: 1058864654}
+  isSpawning: 1
 --- !u!1 &775612431
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +227,57 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 2.6, y: 2.2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1058864653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058864655}
+  - component: {fileID: 1058864654}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1058864654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058864653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fcf07e9fd622146afd1e1066a81255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  timer: 5
+  waveInterval: 5
+  waveNumber: 2
+  totalEnemies: 10
+--- !u!4 &1058864655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058864653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1614958, y: -0.7538722, z: 0.017570509}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -567,3 +624,4 @@ SceneRoots:
   - {fileID: 775612433}
   - {fileID: 1755576509}
   - {fileID: 559192017}
+  - {fileID: 1058864655}

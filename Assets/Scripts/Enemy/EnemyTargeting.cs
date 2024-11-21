@@ -18,8 +18,33 @@ public class EnemyTargeting : Enemy
     {
         float screenHeight = Camera.main.orthographicSize * 2;
         float screenWidth = screenHeight * Camera.main.aspect;
-        float spawnX = Random.Range(-screenWidth, screenWidth);
-        float spawnY = Random.Range(-screenHeight, screenHeight);
+        float spawnOffset = 2f; // Distance beyond screen edge
+        
+        // Select random side (0=top, 1=right, 2=bottom, 3=left)
+        int side = Random.Range(0, 4);
+        
+        float spawnX, spawnY;
+        
+        switch (side)
+        {
+            case 0: // Top
+                spawnX = Random.Range(-screenWidth/2, screenWidth/2);
+                spawnY = screenHeight/2 + spawnOffset;
+                break;
+            case 1: // Right
+                spawnX = screenWidth/2 + spawnOffset;
+                spawnY = Random.Range(-screenHeight/2, screenHeight/2);
+                break;
+            case 2: // Bottom
+                spawnX = Random.Range(-screenWidth/2, screenWidth/2);
+                spawnY = -(screenHeight/2 + spawnOffset);
+                break;
+            default: // Left
+                spawnX = -(screenWidth/2 + spawnOffset);
+                spawnY = Random.Range(-screenHeight/2, screenHeight/2);
+                break;
+        }
+        
         transform.position = new Vector2(spawnX, spawnY);
     }
 
@@ -45,5 +70,3 @@ public class EnemyTargeting : Enemy
         }
     }
 }
-
-
