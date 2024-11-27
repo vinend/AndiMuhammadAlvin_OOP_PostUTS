@@ -40,5 +40,3 @@ public class Enemy : MonoBehaviour
         rb.gravityScale = 0;
     }
 }   
-
-// untuk salah nama commit wkwkwkkw

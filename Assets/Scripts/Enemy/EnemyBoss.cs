@@ -84,6 +84,3 @@ public class EnemyBoss : Enemy
         }
     }
 }
-
-
-// untuk salah nama commit wkwkwkkw

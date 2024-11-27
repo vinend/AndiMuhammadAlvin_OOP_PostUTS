@@ -71,5 +71,3 @@ public class EnemyBossWeapon : MonoBehaviour
         Destroy(bullet.gameObject);
     }
 }
-
-// untuk salah nama commit wkwkwkkw

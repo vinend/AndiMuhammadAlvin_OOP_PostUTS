@@ -7,7 +7,7 @@ public class CombatManager : MonoBehaviour
     public EnemySpawner[] enemySpawners;
     public float timer = 0;
     [SerializeField] private float waveInterval = 5f;
-    public int waveNumber = 1;
+    public int waveNumber = 0;
     public int totalEnemies = 0;
 
     private void Start()
@@ -55,5 +55,3 @@ public class CombatManager : MonoBehaviour
         }
     }
 }
-
-// untuk salah nama commit wkwkwkkw

@@ -180,5 +180,3 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 }
-
-// untuk salah nama commit wkwkwkkw
